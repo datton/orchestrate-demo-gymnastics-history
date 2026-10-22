@@ -1,10 +1,65 @@
-/* Designer: colours, type scale, spacing, motion tokens */
+/* Designer: colours, type scale, spacing, motion tokens.
+   Direction: typography only. No images, no SVG art. Huge, heavy, high-contrast type.
+   Palette (WCAG AA, checked against --color-bg #111114):
+     text   #f5f1e8  ~16:1   accent #f2b632 ~10:1   muted #b9b4a8 ~8:1   hot #ff6a3d ~6.5:1
+   Type: Impact / Arial Black for display (chalk-and-scoreboard feel), Georgia for reading. System fonts only. */
 :root {
+  /* colour */
   --color-bg: #111114;
+  --color-bg-alt: #1b1b21;
   --color-text: #f5f1e8;
+  --color-muted: #b9b4a8;
   --color-accent: #f2b632;
-  --font-display: Impact, "Arial Black", system-ui, sans-serif;
+  --color-hot: #ff6a3d;
+  --color-rule: #3a3a44;
+  --color-focus: #ffffff;
+
+  /* type families */
+  --font-display: Impact, "Arial Black", "Helvetica Neue", system-ui, sans-serif;
   --font-body: Georgia, "Times New Roman", serif;
+
+  /* type scale (fluid; huge on purpose) */
+  --step-mega: clamp(4rem, 18vw, 14rem);
   --step-hero: clamp(3rem, 12vw, 9rem);
+  --step-h1: clamp(2.5rem, 8vw, 6rem);
+  --step-h2: clamp(1.75rem, 5vw, 3.5rem);
+  --step-h3: clamp(1.25rem, 3vw, 2rem);
+  --step-body: clamp(1.125rem, 1.2vw + 0.9rem, 1.5rem);
+  --step-small: 0.9375rem;
+
+  --weight-display: 900;
+  --leading-display: 0.92;
+  --leading-body: 1.6;
+  --tracking-display: -0.02em;
+  --tracking-label: 0.14em;
+  --measure: 62ch;
+
+  /* spacing and shape */
   --space: 1rem;
+  --space-s: 0.5rem;
+  --space-m: 1.5rem;
+  --space-l: 3rem;
+  --space-xl: 6rem;
+  --space-section: clamp(4rem, 14vh, 10rem);
+  --radius: 0;
+  --rule-width: 0.25rem;
+
+  /* motion (JS and CSS should read these; zeroed under reduced motion) */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 400ms;
+  --dur-slow: 900ms;
+  --dur-reveal: 1200ms;
+  --stagger: 60ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0.01ms;
+    --dur-base: 0.01ms;
+    --dur-slow: 0.01ms;
+    --dur-reveal: 0.01ms;
+    --stagger: 0ms;
+  }
 }
