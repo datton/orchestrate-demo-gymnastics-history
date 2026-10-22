@@ -1,0 +1,10 @@
+/* Designer: colours, type scale, spacing, motion tokens */
+:root {
+  --color-bg: #111114;
+  --color-text: #f5f1e8;
+  --color-accent: #f2b632;
+  --font-display: Impact, "Arial Black", system-ui, sans-serif;
+  --font-body: Georgia, "Times New Roman", serif;
+  --step-hero: clamp(3rem, 12vw, 9rem);
+  --space: 1rem;
+}

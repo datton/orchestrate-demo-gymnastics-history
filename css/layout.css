@@ -1,0 +1,7 @@
+/* UI/UX: header, nav, footer, page frame */
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: var(--space); top: var(--space); }
+.site-header { display: flex; flex-wrap: wrap; gap: var(--space); align-items: center; justify-content: space-between; padding: var(--space); }
+.nav-list { display: flex; flex-wrap: wrap; gap: var(--space); list-style: none; margin: 0; padding: 0; }
+main { max-width: 60rem; margin: 0 auto; padding: var(--space); }
+.site-footer { padding: var(--space); text-align: center; }
